@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "AI Transfer Pro",
+  "version": "19.1.0",
+  "description": "Unlimited full-chat screenshot to multi-page PDF generator, code organizer, and auto-uploader for AI platforms.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs",
+    "storage",
+    "unlimitedStorage",
+    "clipboardWrite",
+    "downloads"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "AI Transfer Pro"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.chatgpt.com/*",
+        "*://*.gemini.google.com/*",
+        "*://*.claude.ai/*",
+        "*://*.deepseek.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

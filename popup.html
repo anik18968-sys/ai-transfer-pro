@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Transfer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="default">
+  <div class="shell">
+    <div class="header">
+      <div class="brand">
+        <span class="brand-dot" id="brandDot"></span>
+        <span class="brand-title">AI Transfer</span>
+      </div>
+      <button id="apiDrawerBtn" class="icon-pill" title="API Key Settings">
+        <span id="modeLabel">Basic</span>
+      </button>
+    </div>
+
+    <div class="active-card">
+      <span class="active-hint">Connected to</span>
+      <div id="activeAiName" class="active-name">Google Gemini</div>
+    </div>
+
+    <div class="nav-list">
+      <button class="nav-item" data-id="chatgpt">
+        <div class="item-left">
+          <span class="item-indicator"></span>
+          <span class="item-title">ChatGPT</span>
+        </div>
+        <span class="item-action">Transfer &rarr;</span>
+      </button>
+
+      <button class="nav-item" data-id="gemini">
+        <div class="item-left">
+          <span class="item-indicator"></span>
+          <span class="item-title">Google Gemini</span>
+        </div>
+        <span class="item-action">Transfer &rarr;</span>
+      </button>
+
+      <button class="nav-item" data-id="claude">
+        <div class="item-left">
+          <span class="item-indicator"></span>
+          <span class="item-title">Claude</span>
+        </div>
+        <span class="item-action">Transfer &rarr;</span>
+      </button>
+
+      <button class="nav-item" data-id="deepseek">
+        <div class="item-left">
+          <span class="item-indicator"></span>
+          <span class="item-title">DeepSeek</span>
+        </div>
+        <span class="item-action">Transfer &rarr;</span>
+      </button>
+    </div>
+
+    <div class="footer-bar">
+      <label class="switch-label" title="Captures unlimited full-screen pages into a single PDF + organizes text, code &amp; summary">
+        <input type="checkbox" id="fullShotToggle" checked />
+        <span>Unlimited Screenshots to PDF</span>
+      </label>
+      <button id="floatGlassBtn" class="ghost-btn">Mini HUD</button>
+    </div>
+
+    <div class="api-drawer" id="apiDrawer">
+      <div class="drawer-row">
+        <select id="apiProviderSelect" class="minimal-select">
+          <option value="gemini">Google Gemini API (Recommended)</option>
+          <option value="openai">OpenAI API</option>
+          <option value="openrouter">OpenRouter API</option>
+        </select>
+      </div>
+      <div class="drawer-row">
+        <input type="password" id="apiKeyInput" class="minimal-input" placeholder="Personal API Key (Optional)..." />
+        <button id="saveKeyBtn" class="minimal-btn">Save</button>
+        <button id="clearKeyBtn" class="minimal-btn subtle">✕</button>
+      </div>
+    </div>
+
+    <div id="msgBox" class="toast-msg"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
